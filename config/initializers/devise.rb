@@ -229,8 +229,8 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  GITHUB_CONFIG = YAML.load_file("#{::Rails.root}/config/secrets.yml")[::Rails.env]
-  config.omniauth :github, GITHUB_CONFIG['omniauth_provider_key'], GITHUB_CONFIG['289cafb0ebc415974551448cfdcd72adb0dfbc29'], scope: 'user, user:email, user:public_repo'
+  config.omniauth :github, 'e407f2d328c147308810', '289cafb0ebc415974551448cfdcd72adb0dfbc29', scope: 'user, user:email, user:repo'
+
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
