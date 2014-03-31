@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_filter :authenticate_user!
-  before_filter :correct_user?, :except => [:index]
+  # before_filter :correct_user?, :except => [:index]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -28,6 +29,9 @@ class UsersController < ApplicationController
   end
 
   private
+  def set_user
+      @user = User.find(params[:id])
+    end
 
   def secure_params
     params.require(:user).permit(:email)
